@@ -4,6 +4,10 @@ ProofPack connects evolving requirements to executable checks and current eviden
 
 **Define the contract. Change the scope. Inspect fresh evidence.** The included support-assistant example links each requirement to its implementation, tests, approved facts and report. Adding a support-routing requirement blocks an earlier pass, even when the questions and documents stay the same.
 
+![The synthetic ProofPack demo blocks scope v2: four requirement checks are stale and the new support-routing requirement has no evidence.](docs/images/scope-change.png)
+
+*Changed scope, unchanged report: acceptance stays blocked until a new approval and execution.*
+
 ## Run the offline demo
 
 Requires **Node.js 22 or later** and npm. No Azure account, GitHub credentials, model endpoint or API key is needed. The package has **zero external dependencies**.
@@ -28,6 +32,10 @@ Open **http://127.0.0.1:4272**. Once the files are on your machine, the workflow
 | Scope v2, fresh matching fixture report | 5/5 checks verified; human release review still pending |
 
 The example is **synthetic**: Atlas Lab and Atlas Edge are fictional, the selector is deterministic, and no model is called. English answers come from the included English corpus, not from recorded or translated model completions. A support route is displayed; no ticket is sent.
+
+![Fresh synthetic evidence verifies all five scope-v2 checks and shows the exact E-214 answer with its approved document citation; human release review remains pending.](docs/images/validated-answer.png)
+
+*A real local-app screenshot of a deterministic fixture, not live model inference. The answer is exact approved text with a versioned citation.*
 
 ## Useful commands
 
