@@ -1,0 +1,11 @@
+node_modules/
+.proofpack/
+dist/
+test-results/
+playwright-report/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store

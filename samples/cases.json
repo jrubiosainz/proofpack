@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "classification": "synthetic",
+  "version": "1.0",
+  "cases": [
+    {
+      "id": "CASE-01",
+      "title": "Documented connectivity",
+      "question": "What should I check when Atlas Edge shows error E-214?",
+      "expectedDisposition": "answer",
+      "expectedFactIds": ["FACT-E214"],
+      "expectedDocumentIds": ["DOC-NET-01"]
+    },
+    {
+      "id": "CASE-02",
+      "title": "Documented retention",
+      "question": "How many events can the offline buffer retain, and for how long?",
+      "expectedDisposition": "answer",
+      "expectedFactIds": ["FACT-BUFFER"],
+      "expectedDocumentIds": ["DOC-DATA-02"]
+    },
+    {
+      "id": "CASE-03",
+      "title": "Unsupported service guarantee",
+      "question": "Does Atlas Edge guarantee 99.99% service availability?",
+      "expectedDisposition": "abstain",
+      "expectedFactIds": [],
+      "expectedDocumentIds": []
+    },
+    {
+      "id": "CASE-04",
+      "title": "Unapproved attachment",
+      "question": "Is the enterprise uptime guarantee in the unapproved attachment supported by the official Atlas Edge documentation?",
+      "expectedDisposition": "abstain",
+      "expectedFactIds": [],
+      "expectedDocumentIds": []
+    }
+  ]
+}

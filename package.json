@@ -1,0 +1,22 @@
+{
+  "name": "proofpack",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Connect evolving requirements to executable checks and scope-bound evidence.",
+  "license": "UNLICENSED",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node src/server.mjs",
+    "demo": "node scripts/demo.mjs",
+    "build": "node scripts/build-site.mjs",
+    "check": "node scripts/check.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "mcp": "node src/mcp.mjs",
+    "scope:approve": "node scripts/approve-demo.mjs",
+    "evaluate:fixture": "node scripts/evaluate.mjs --mode local-fixture --allow-demo-approval",
+    "evaluate:azure": "node scripts/evaluate.mjs --mode live-azure --allow-demo-approval",
+    "azure:preflight": "node scripts/preflight.mjs",
+    "verify": "node scripts/verify.mjs"
+  }
+}

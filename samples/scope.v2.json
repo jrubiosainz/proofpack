@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "version": 2,
+  "classification": "synthetic",
+  "purpose": "Bounded support-assistant evaluation over an English synthetic corpus.",
+  "corpusVersion": "1.0",
+  "caseSetVersion": "1.0",
+  "allowedExecutionModes": ["local-fixture", "live-azure"],
+  "budget": { "maxCallsPerRun": 4, "maxOutputTokensPerCall": 180, "maxInputCharactersPerCall": 7000 },
+  "requirements": [
+    { "id": "R-01", "version": 1 },
+    { "id": "R-02", "version": 1 },
+    { "id": "R-03", "version": 1 },
+    { "id": "R-04", "version": 1 },
+    { "id": "R-05", "version": 1 }
+  ],
+  "change": { "id": "CHG-001", "fromScopeVersion": 1, "addedRequirement": "R-05", "approvalRequiredAgain": true },
+  "externalRelease": "human-review-required"
+}
