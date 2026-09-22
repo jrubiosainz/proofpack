@@ -1,0 +1,27 @@
+{
+  "classification": "synthetic",
+  "title": "A support assistant with inspectable evidence",
+  "organization": "Atlas Lab (fictional)",
+  "product": "Atlas Edge (fictional)",
+  "audience": "Application and solution engineering teams",
+  "problem": "A convincing answer is not enough: the team needs to know which requirements it satisfies and which approved facts support it.",
+  "outcome": "Evaluate a small support assistant before considering a controlled pilot.",
+  "inScope": [
+    "Four English synthetic support questions and a versioned, approved fact set.",
+    "Exact extractive answers, versioned citations, abstention and an explicit support route.",
+    "Requirements linked to executable checks, tests and source-bound evidence."
+  ],
+  "outOfScope": [
+    "Customer data, external connectors and production support.",
+    "Free-form answer generation, ticket creation and automatic release approval.",
+    "Production accuracy, service-level or business-value guarantees."
+  ],
+  "lateChange": {
+    "id": "CHG-001",
+    "title": "Make abstention actionable",
+    "request": "When evidence is missing, show an approved support route and a reason. Do not send a ticket.",
+    "addedRequirement": "R-05",
+    "impact": "Scope v2 needs a new approval and a new report, even though the four questions and corpus have not changed."
+  },
+  "notice": "This is an English synthetic demo. Its answers are deterministic fixture output, not recorded or translated model completions."
+}

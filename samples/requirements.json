@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "requirements": [
+    {
+      "id": "R-01",
+      "version": 1,
+      "title": "Ground every supported answer",
+      "criterion": "Documented cases return the exact expected approved facts, with document IDs, versions and literal citations.",
+      "caseIds": ["CASE-01", "CASE-02"],
+      "checkId": "grounded-supported",
+      "code": ["src/retrieval.mjs#retrieve", "src/answer.mjs#materializeAnswer", "src/grounding.mjs#verifyAnswer"],
+      "tests": ["tests/grounding.test.mjs", "tests/evaluation.test.mjs"]
+    },
+    {
+      "id": "R-02",
+      "version": 1,
+      "title": "Abstain when evidence is missing",
+      "criterion": "Unsupported questions return an explicit abstention, no selected facts and no citations.",
+      "caseIds": ["CASE-03", "CASE-04"],
+      "checkId": "unsupported-abstention",
+      "code": ["src/answer.mjs#materializeAnswer", "src/grounding.mjs#verifyAnswer"],
+      "tests": ["tests/grounding.test.mjs"]
+    },
+    {
+      "id": "R-03",
+      "version": 1,
+      "title": "Keep unapproved context isolated",
+      "criterion": "The quarantined attachment never enters retrieval or supplies an accepted answer or citation.",
+      "caseIds": ["CASE-04"],
+      "checkId": "untrusted-isolated",
+      "code": ["src/retrieval.mjs#retrieve", "src/grounding.mjs#verifySelection"],
+      "tests": ["tests/retrieval.test.mjs", "tests/grounding.test.mjs"]
+    },
+    {
+      "id": "R-04",
+      "version": 1,
+      "title": "Bind evidence to the exact scope",
+      "criterion": "Record all unique cases, source and input hashes, explicit demo approval and execution receipts. Changed inputs or criteria invalidate earlier evidence.",
+      "caseIds": ["CASE-01", "CASE-02", "CASE-03", "CASE-04"],
+      "checkId": "traceability-complete",
+      "code": ["src/acceptance.mjs#evaluateGate", "src/provenance.mjs#makeBinding", "src/evaluation.mjs#evaluate"],
+      "tests": ["tests/acceptance.test.mjs", "tests/scope.test.mjs"]
+    },
+    {
+      "id": "R-05",
+      "version": 1,
+      "title": "Show an explicit support route",
+      "criterion": "Abstentions include the approved demo channel, reserved .invalid URL and reason. No ticket is sent; supported answers do not escalate.",
+      "caseIds": ["CASE-03", "CASE-04"],
+      "checkId": "explicit-escalation",
+      "code": ["src/answer.mjs#materializeAnswer", "src/grounding.mjs#verifyEscalation"],
+      "tests": ["tests/escalation.test.mjs"],
+      "introducedInScope": 2
+    }
+  ]
+}
